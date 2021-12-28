@@ -98,25 +98,6 @@ input:checked ~ .menu {
   font-size: 20px;
 }
 
-/* @media screen and (min-width: 601px) {
-  label {
-    display: none;
-  }
-  .menu {
-    float: right;
-    clear: none;
-    max-height: 50px;
-  }
-  .menu li {
-    display: inline-block;
-    padding: 0 10px;
-  }
-
-  /* .item-group {
-    display: flex;
-  } */
-/* } */
-
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
   label {
     display: none;
