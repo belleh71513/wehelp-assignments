@@ -1,0 +1,22 @@
+<script>
+  function maxZeros(nums){
+// 請用你的程式補完這個函式的區塊
+    let zeroLength = 0 ;
+    let maxZeroLength = 0 ;
+    for(let i=0 ; i<nums.length ; i++){
+      if(nums[i] === 0){
+        zeroLength ++ ;
+      }else{
+        if(zeroLength > maxZeroLength){
+          maxZeroLength = zeroLength ;
+        }
+        zeroLength = 0;
+      }
+    }
+    console.log(Math.max(zeroLength, maxZeroLength));
+  }
+  maxZeros([0, 1, 0, 0]); // 得到 2
+  maxZeros([1, 0, 0, 0, 0, 1, 0, 1, 0, 0]); // 得到 4
+  maxZeros([1, 1, 1, 1, 1]); // 得到 0
+  maxZeros([0, 0, 0, 1, 1]) // 得到 3
+</script>

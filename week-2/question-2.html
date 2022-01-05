@@ -1,0 +1,50 @@
+<script>
+
+  function avg(data){
+  // 請用你的程式補完這個函式的區塊
+    let length = data.employees.length
+    let result = 0
+    let arr = []
+
+
+    for(let i=0 ; i<length ; i++){
+      arr.push(data['employees'][i]['salary'])
+    }
+
+    for(let i=0 ; i<arr.length ; i++) {
+      result += arr[i]
+    }
+
+    let ans = result / length
+
+    console.log(ans)
+
+  }
+
+
+
+
+
+
+  avg({
+    "count":3,
+    "employees":[
+    {
+    "name":"John",
+    "salary":30000
+    },
+    {
+    "name":"Bob",
+    "salary":60000
+    },
+    {
+    "name":"Jenny",
+    "salary":50000
+    }
+    ]
+  });// 呼叫 avg 函式
+
+
+
+
+  </script>
