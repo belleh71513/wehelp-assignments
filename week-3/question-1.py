@@ -16,17 +16,6 @@ with open("data.csv", "w", encoding="utf-8") as file:
     fileUrlList = fileStr.split(".jpg",1)
     firstImgURL = fileUrlList[0] + ".jpg"
 
-
-    # print(firstImgURL)
-    # print(stitle +","+ address +","+ longitude +","+ latitude +","+ fileListURL + "\n")
     file.write(stitle +","+ address +","+ longitude +","+ latitude +","+ firstImgURL + "\n")
-  # for i in range(len(newList)):
-  #   fileList = newList[i]["file"]
-  #   firstImg = file.split("jpg")
-  # print(firstImg)
 
-    # imgText = ""
-    # for img in items["file"]:
-    #   imgText = imgText+img
-    #   firstImg = imgText.split("jpg",2)
-  # file.write(stitle +","+ address +","+ longitude +","+ latitude +"\n")
+
