@@ -14,22 +14,24 @@ request.onload = function() {
     strImg += attractions[i]["stitle"] + ",";
   };
   arrText = strImg.split(",")
-  console.log(arrText)
 
   for(let i=0 ; i<attLegth ; i++){
     arrImg.push(attractions[i]["file"].toLowerCase().split("jpg", 1) + "jpg")
   };
 
-
-  for(let i=0 ; i<8 ; i++){
   let body = document.querySelector("body");
 
-  let divIntro = document.createElement("div")
-  divIntro.className = "introduce";
+  let divCon = document.createElement("div");
+  divCon.className = "container";
 
-  let divItemgroup = document.createElement("div");
-  divItemgroup.className = "item-group"
+  let divWrap = document.createElement("div");
+  divWrap.className = "wrap";
 
+  body.appendChild(divCon);
+  divCon.append(divWrap);
+
+
+  for(let i=0 ; i<8 ; i++){
   let divItem = document.createElement("div");
   divItem.className = "item"
 
@@ -39,15 +41,14 @@ request.onload = function() {
   let img = document.createElement("img");
   img.src = arrImg[i]
 
-  let divText = document.createElement("div");
-  divText.className = "text";
-  divText.innerText = arrText[i]
+  let divItemText = document.createElement("div");
+  divItemText.className = "itemText";
+  divItemText.innerText = arrText[i]
 
-  body.appendChild(divIntro);
-  divIntro.append(divItemgroup);
-  divItemgroup.append(divItem);
+
+  divWrap.append(divItem);
   divItem.append(divPic);
-  divItem.append(divText);
+  divItem.append(divItemText);
   divPic.append(img);
   }
 
