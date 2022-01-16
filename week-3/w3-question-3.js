@@ -2,20 +2,23 @@
 //取得網址，並送出請求讀取JSON資料
 let src = "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json" ;
 
-const btn = document.querySelector(".btn");
-const container = document.querySelector(".container");
-const wrap = document.createElement("div");
-wrap.className = "wrap"
 
+
+const btn = document.querySelector(".btn");
 let imgRowStart = 0 ;
+
 
 function getData () {
 
 fetch(src)
-  .then((response) => {
+  .then( response => {
     return response.json();
   })
-  .then((jsonResult) => {
+  .then( jsonResult => {
+    const container = document.querySelector(".container");
+    const wrap = document.createElement("div");
+    wrap.className = "wrap"
+
     const attractions = jsonResult.result.results;
 
     for(let i=imgRowStart ; i<imgRowStart+8 ; i++){
@@ -41,13 +44,16 @@ fetch(src)
 
     }
     imgRowStart +=8 ;
+
   })
 
 }
+getData();
 
 btn.addEventListener("click", getData);
 
-getData();
+
+// getData();
 
 
 
