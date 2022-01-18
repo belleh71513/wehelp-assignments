@@ -3,7 +3,7 @@ import pstats
 from flask import Flask, request, render_template, url_for, redirect, session
 from markupsafe import re
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", static_url_path="/")
 
 app.secret_key = "secret"
 
