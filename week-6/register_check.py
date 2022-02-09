@@ -28,26 +28,7 @@ def checkUserExist(username):
   if checkAccount:
     return True
 
-# def checkName(name):
-#   cursor.execute("SELECT name FROM memberSystem WHERE name=%s",(name,))
-#   checkName = cursor.fetchone()
-#   if checkName:
-#     print(checkName[0])
 
-
-
-# def register(**kwargs):
-#   sql = "INSERT INTO memberSystem(name, username, password) VALUES (%s, %s, %s)"
-#   cursor.execute(sql, (name=name, username=username, password=password,))
-#   mydb.commit()
-#   cursor.close()
-#   mydb.close()
-
-# def checkUserExist(**kwargs):
-#   cursor.execute("SELECT username FROM memberSystem WHERE username=%s",(username,))
-#   checkAccount = cursor.fetchone()
-#   if checkAccount:
-#     return True
 
 
 
