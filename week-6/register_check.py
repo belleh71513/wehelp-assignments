@@ -1,11 +1,17 @@
 import mysql.connector
-mydb = mysql.connector.connect(
+from mysql.connector import pooling
+mydb_connection_pool = mysql.connector.pooling.MySQLConnectionPool(
+  pool_name = "mypool",
+  pool_size = 3,
+  pool_reset_session = True,
   host = "localhost",
   user = "root",
   password = "password",
   database = "week6"
 )
+mydb = mydb_connection_pool.get_connection()
 cursor = mydb.cursor(buffered=True)
+
 
 # 註冊帳號
 def register(name, username, password):
