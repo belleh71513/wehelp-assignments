@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for, redirect, session
-from register_check import register, loginConfirmation, checkUserExist
+from register_check import register, checkAccount
 app = Flask(__name__, static_folder="static", static_url_path="/")
 app.secret_key = "secret"
 
@@ -13,10 +13,10 @@ def index():
 def signin():
   loginAcc = request.form["loginAcc"]
   loginPassword = request.form["loginPw"]
-  loginCheck = loginConfirmation(loginAcc, loginPassword)
+  checkLogin = checkAccount(loginAcc, loginPassword)
 
-  if loginCheck :
-    session["name"] = loginCheck[1]
+  if checkLogin :
+    session["name"] = checkLogin[1]
     session["username"] = loginAcc
     session["password"] = loginPassword
     return redirect(url_for("member"))
@@ -49,7 +49,7 @@ def signup():
   name=request.form["registerName"]
   username=request.form["registerUsername"]
   password=request.form["registerPassword"]
-  checkUser = checkUserExist(username)
+  checkUser = checkAccount(username)
   if not name or not username or not password:
     message = "姓名、帳號、密碼不得空白"
     return redirect(url_for("error", message=message))

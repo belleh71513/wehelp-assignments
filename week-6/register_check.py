@@ -16,23 +16,28 @@ cursor = mydb.cursor(buffered=True)
 # 註冊帳號
 def register(name, username, password):
   sql = "INSERT INTO memberSystem(name, username, password) VALUES (%s, %s, %s)"
-  cursor.execute(sql, (name, username, password,))
+  cursor.execute(sql, (name, username, password))
   mydb.commit()
   # cursor.close()
   # mydb.close()
 
 # 登入確認
-def loginConfirmation(username, password):
-  cursor.execute("SELECT * FROM memberSystem WHERE username=%s AND password=%s",( username, password,))
-  loginAccountCheck = cursor.fetchone()
-  return loginAccountCheck
+def checkAccount(username, password=None):
+  if password is None:
+    cursor.execute("SELECT username FROM memberSystem WHERE username=%s",(username,))
+    checkUsername = cursor.fetchone()
+    return checkUsername
+  else:
+    cursor.execute("SELECT * FROM memberSystem WHERE username=%s AND password=%s",( username, password))
+    checkLogin = cursor.fetchone()
+    return checkLogin
 
 # 檢查帳號是否重複
-def checkUserExist(username):
-  cursor.execute("SELECT username FROM memberSystem WHERE username=%s",(username,))
-  checkAccount = cursor.fetchone()
-  if checkAccount:
-    return True
+# def checkUserExist(username):
+#   cursor.execute("SELECT username FROM memberSystem WHERE username=%s",(username,))
+#   checkAccount = cursor.fetchone()
+#   if checkAccount:
+#     return True
 
 
 
