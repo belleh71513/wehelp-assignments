@@ -2,10 +2,7 @@ const searchBtn = document.querySelector("#searchBtn")
 const alterBtn = document.querySelector("#alterBtn")
 
 function getData(){
-  // 取消form表單默認submit事件
-  document.querySelector("#formSearch").addEventListener("click", event =>{
-    event.preventDefault();
-  })
+
   const searchInput = document.querySelector("#searchInput").value
   const searchVal = document.querySelector("#searchVal")
   fetch(`http://127.0.0.1:3000/api/members?username=${searchInput}`,)
@@ -28,9 +25,7 @@ function getData(){
 }
 
 function alterData(){
-  document.querySelector("#formAlter").addEventListener("click", event =>{
-    event.preventDefault();
-  })
+
   const alterInput= document.querySelector("#alterInput").value
   const alterVal = document.querySelector("#alterVal")
   fetch("http://127.0.0.1:3000/api/member",{

@@ -88,14 +88,14 @@ def alterNameApi():
     username = session["username"]
     # 獲取資料庫中username資料
     getSqlData = checkAccount(username)
-    if not newName or newName == getSqlData[1]:
+    if not newName :
       return jsonify({"error":True })
     else:
       # 修改name資料，並取得更新後的資料
       getNewData = alterName(newName, username)
       if getNewData:
         return jsonify({"ok":True })
-  return redirect(url_for("index"))
+  return jsonify({"error":True })
 
 
 if __name__ == "__main__":
