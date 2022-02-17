@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>失敗頁面</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>失敗頁面</h1>
+  </header>
+
+  <div action ="{{url_for('error')}}" class = container>
+    <h3 >{{ msg }}</h3>
+    <a href="/">回到首頁</a>
+  </div>
+
+</body>
+</html>

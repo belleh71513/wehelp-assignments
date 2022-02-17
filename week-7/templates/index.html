@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week-7</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>歡迎光臨，請註冊登入系統</h1>
+  </header>
+
+  <form action="{{url_for('signup')}}" method="POST">
+    <h3>註冊帳號</h3>
+    <label for="registerName">姓名</label>
+    <input id="registerName "type="text" name="registerName">
+    <br/>
+    <label for="registerUsername">帳號</label>
+    <input id="registerUsername" type="text" name="registerUsername">
+    <br/>
+    <label for="registerPassword">密碼</label>
+    <input id="registerPassword" type="password" name="registerPassword">
+    <br/>
+    <button type="submit">註冊</button>
+  </form>
+
+  <hr>
+
+  <form action="{{url_for('signin')}}" method="POST">
+    <h3>登入系統</h3>
+    <label for="loginAccount">帳號</label>
+    <input id="loginAccount" type="text" name="loginAcc">
+    <br/>
+    <label for="loginPassword">密碼</label>
+    <input id="loginPassword" type="password" name="loginPw">
+    <br/>
+    <button type="submit">登入</button>
+  </form>
+
+</body>
+</html>
