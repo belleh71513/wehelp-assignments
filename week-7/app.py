@@ -77,7 +77,7 @@ def searchNameApi():
       return jsonify({"data":data})
     else:
       return jsonify({"data":None})
-  return redirect(url_for("index"))
+  return jsonify({"data":None})
 
 @app.route("/api/member", methods=["POST"])
 def alterNameApi():
