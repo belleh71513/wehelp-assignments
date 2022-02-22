@@ -63,7 +63,7 @@ def signout():
 
 @app.route("/api/members")
 def searchNameApi():
-  if "uesername" in session:
+  if "username" in session:
     # 獲取前端傳送的值
     username = request.args.get("username")
     # 確認username是否存放於資料庫中
